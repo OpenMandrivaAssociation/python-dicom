@@ -2,7 +2,7 @@
 %define name	python-%{module}
 %define vrsn	0.9.4
 %define ptchlvl	1
-%define release	%mkrel 1
+%define release	%mkrel 2
 
 Summary:	Read, modify and write DICOM files with python code
 Name:		%{name}
