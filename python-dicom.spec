@@ -34,3 +34,15 @@ PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot} --record
 
 %files -f FILELIST
 %defattr(-,root,root)
+
+
+%changelog
+* Thu Nov 04 2010 Funda Wang <fwang@mandriva.org> 0.9.4.1-2mdv2011.0
++ Revision: 593083
+- rebuild for py2.7
+
+* Mon Aug 16 2010 Paulo Andrade <pcpa@mandriva.com.br> 0.9.4.1-1mdv2011.0
++ Revision: 570630
+- Import python-dicom 0.9.4.1.
+- python-dicom
+
