@@ -25,7 +25,7 @@ it should run anywhere python runs without any other requirements.
 
 %install
 PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot} --record=FILELIST
-sed -i 's/.*egg-info$//' FILELIST
+#sed -i 's/.*egg-info$//' FILELIST
 
 %clean
 
