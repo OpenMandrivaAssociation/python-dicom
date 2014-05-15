@@ -1,20 +1,18 @@
 %define module	dicom
-%define name	python-%{module}
 %define vrsn	0.9.4
 %define ptchlvl	1
-%define release	%mkrel 2
 
 Summary:	Read, modify and write DICOM files with python code
-Name:		%{name}
-Version:	%{vrsn}.%{ptchlvl}
-Release:	%{release}
-Source0:	http://pydicom.googlecode.com/files/pydicom-0.9.4-1.tar.gz
+
+Name:		python-%{module}
+Version:	0.9.8
+Release:	%mkrel 2
+Source0:	http://pydicom.googlecode.com/files/pydicom-%{version}.tar.gz
 License:	BSD
 Group:		Development/Python
 Url:		http://pydicom.googlecode.com/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:	noarch
-%py_requires -d
+BuildRequires:  python-devel
 
 %description
 pydicom is a pure python package for working with DICOM files. It was made
@@ -23,26 +21,14 @@ modifications can be written again to a new file. As a pure python package,
 it should run anywhere python runs without any other requirements.
 
 %prep
-%setup -q -n py%{module}-%{vrsn}-%{ptchlvl}
+%setup -q -n py%{module}-%{version}
 
 %install
-%__rm -rf %{buildroot}
 PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot} --record=FILELIST
+sed -i 's/.*egg-info$//' FILELIST
 
 %clean
-%__rm -rf %{buildroot}
 
 %files -f FILELIST
-%defattr(-,root,root)
 
-
-%changelog
-* Thu Nov 04 2010 Funda Wang <fwang@mandriva.org> 0.9.4.1-2mdv2011.0
-+ Revision: 593083
-- rebuild for py2.7
-
-* Mon Aug 16 2010 Paulo Andrade <pcpa@mandriva.com.br> 0.9.4.1-1mdv2011.0
-+ Revision: 570630
-- Import python-dicom 0.9.4.1.
-- python-dicom
 
