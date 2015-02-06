@@ -6,7 +6,7 @@ Summary:	Read, modify and write DICOM files with python code
 
 Name:		python-%{module}
 Version:	0.9.8
-Release:	%mkrel 2
+Release:	3
 Source0:	http://pydicom.googlecode.com/files/pydicom-%{version}.tar.gz
 License:	BSD
 Group:		Development/Python
