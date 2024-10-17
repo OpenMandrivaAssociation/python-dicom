@@ -10,7 +10,7 @@ Release:	3
 Source0:	http://pydicom.googlecode.com/files/pydicom-%{version}.tar.gz
 License:	BSD
 Group:		Development/Python
-Url:		http://pydicom.googlecode.com/
+Url:		https://pydicom.googlecode.com/
 BuildArch:	noarch
 BuildRequires:  python-devel
 
